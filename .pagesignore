@@ -1,0 +1,19 @@
+# Repository metadata and source-only material
+.git
+.github
+.pagesignore
+
+# Dark Arts image-generation explorations. One legacy background is restored
+# explicitly by the workflow because the deck still references it.
+dark-arts/assets/_unused
+
+# Handoff source and superseded visual experiments not referenced by the deck.
+handoff/paul_bakaus_killing_the_handoff.pdf
+handoff/assets/neo-kinpaku/verdigris-patina.png
+handoff/assets/neo-kinpaku/kintsugi-hero-v2.png
+handoff/assets/neo-kinpaku/hero-seam-field-v2.png
+handoff/assets/neo-kinpaku/gold-dust-rule.png
+handoff/assets/neo-kinpaku/oxidation-edge-accent.png
+handoff/assets/patterns/lazy-impact.png
+handoff/assets/patterns/layout-templates.png
+handoff/assets/patterns/lazy-cool.png
