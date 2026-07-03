@@ -4,6 +4,8 @@ Paul Bakaus's talk decks, speaker notes, and demos. Each talk is a self-containe
 folder: a single-file HTML deck plus its assets, an outline, a per-slide talk
 track, and any runnable demos or starter code.
 
+**[View the talks on GitHub Pages](https://bioshazard.github.io/impeccable-talks/)**
+
 | Talk | Folder | What it is |
 |---|---|---|
 | **The Dark Arts of Skill Engineering** | [`dark-arts/`](dark-arts/) | AI Engineer World's Fair, workshop track. Building one skill from a prompt to a harness extension, live. |

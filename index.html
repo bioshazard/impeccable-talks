@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Talk decks, demos, and field notes by Paul Bakaus.">
+  <meta name="theme-color" content="#11110f">
+  <title>Talks · Paul Bakaus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Alumni+Sans:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ground: #11110f;
+      --surface: #191916;
+      --text: #eeeae0;
+      --muted: #aaa69d;
+      --gold: #d9ae4f;
+      --patina: #55b8ae;
+      --rule: rgba(238, 234, 224, .14);
+      font-family: "Albert Sans", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 90% 0, rgba(85, 184, 174, .08), transparent 32rem),
+        radial-gradient(circle at 0 100%, rgba(217, 174, 79, .08), transparent 36rem),
+        var(--ground);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(64px, 10vw, 128px) 0 72px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .eyebrow, .number {
+      margin: 0 0 8px;
+      color: var(--patina);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Alumni Sans", sans-serif;
+      font-size: clamp(4.5rem, 12vw, 9rem);
+      font-weight: 500;
+      letter-spacing: -.035em;
+      line-height: .72;
+    }
+
+    header p:last-child {
+      max-width: 25rem;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .talks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 56px;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+
+    article {
+      position: relative;
+      min-height: 360px;
+      padding: 28px;
+      overflow: hidden;
+      background: rgba(25, 25, 22, .54);
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    article:hover {
+      z-index: 1;
+      background: var(--surface);
+      transform: translateY(-5px);
+    }
+
+    article::after {
+      position: absolute;
+      right: -1.4rem;
+      bottom: -5.5rem;
+      color: rgba(217, 174, 79, .055);
+      content: attr(data-mark);
+      font-family: "Alumni Sans", sans-serif;
+      font-size: 16rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    h2 {
+      max-width: 8em;
+      margin: 60px 0 16px;
+      font-family: "Alumni Sans", sans-serif;
+      font-size: 2.65rem;
+      font-weight: 500;
+      line-height: .98;
+    }
+
+    article p {
+      max-width: 25rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+    a {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    a span {
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+      color: var(--text);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    a span::after {
+      display: inline-block;
+      margin-left: .6em;
+      color: var(--gold);
+      content: "↗";
+      transition: transform .2s ease;
+    }
+
+    a:hover span::after { transform: translate(3px, -3px); }
+    a:focus-visible { outline: 2px solid var(--patina); outline-offset: -4px; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 28px;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    @media (max-width: 760px) {
+      header { grid-template-columns: 1fr; }
+      .talks { grid-template-columns: 1fr; }
+      article { min-height: 300px; }
+      h2 { margin-top: 36px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      article, a span::after { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">Paul Bakaus presents</p>
+        <h1>Talks</h1>
+      </div>
+      <p>Decks about design, software, and what happens when AI changes how both get made.</p>
+    </header>
+
+    <section class="talks" aria-label="Talks">
+      <article data-mark="01">
+        <p class="number">01 · AI Engineering</p>
+        <h2>The Dark Arts of Skill Engineering</h2>
+        <p>Building one skill from a prompt to a harness extension, live.</p>
+        <a href="./dark-arts/" aria-label="Open The Dark Arts of Skill Engineering">
+          <span>View deck</span>
+        </a>
+      </article>
+
+      <article data-mark="02">
+        <p class="number">02 · Design</p>
+        <h2>Design at the Speed of Adjectives</h2>
+        <p>Why the future of design tooling lives above the pixel layer.</p>
+        <a href="./adjectives/" aria-label="Open Design at the Speed of Adjectives">
+          <span>View deck</span>
+        </a>
+      </article>
+
+      <article data-mark="03">
+        <p class="number">03 · Product</p>
+        <h2>Killing the Handoff</h2>
+        <p>A keynote about removing the gap between design intent and implementation.</p>
+        <a href="./handoff/" aria-label="Open Killing the Handoff">
+          <span>View deck</span>
+        </a>
+      </article>
+    </section>
+
+    <footer>
+      <span>Keyboard-driven decks · arrow keys or space</span>
+      <span>© Paul Bakaus</span>
+    </footer>
+  </main>
+</body>
+</html>
